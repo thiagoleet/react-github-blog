@@ -1,10 +1,17 @@
-import Header from "./pages/Header";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyle } from "./styles/global";
+import { defaultTheme } from "./styles/theme/default";
+import { BrowserRouter } from "react-router-dom";
+import Router from "./Router";
 
 function App() {
   return (
-    <>
-      <Header />
-    </>
+    <ThemeProvider theme={defaultTheme}>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+      <GlobalStyle />
+    </ThemeProvider>
   );
 }
 
