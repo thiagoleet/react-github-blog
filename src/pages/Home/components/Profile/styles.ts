@@ -12,12 +12,10 @@ export const ProfileContainer = styled.section`
 export const ProfileAvatar = styled.div`
   width: 9.25rem;
   height: 9.25rem;
-  background-color: ${({ theme }) => theme.colors.background};
-  border-radius: 4px;
-
   img {
     width: 100%;
     height: 100%;
+    border-radius: 4px;
   }
 `;
 

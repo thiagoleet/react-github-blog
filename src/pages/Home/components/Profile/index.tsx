@@ -1,3 +1,4 @@
+import { User } from "../../../../models/User";
 import {
   ProfileAvatar,
   ProfileContainer,
@@ -7,22 +8,31 @@ import {
   ProfileHeader,
 } from "./styles";
 
-export default function Profile() {
+interface ProfileProps {
+  user: User | null;
+}
+
+export default function Profile({ user }: ProfileProps) {
   return (
     <ProfileContainer>
-      <ProfileAvatar></ProfileAvatar>
+      <ProfileAvatar>
+        <img
+          src={user?.avatar_url}
+          alt={user?.name}
+        />
+      </ProfileAvatar>
       <ProfileDetailsContent>
         <ProfileHeader>
-          <h1>Name Surname</h1>
-          <a href="#">Github</a>
+          <h1>{user?.name}</h1>
+          <a
+            href={user?.html_url}
+            target="_blank"
+          >
+            Github
+          </a>
         </ProfileHeader>
         <ProfileDetails>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio
-            deleniti rem error enim, sed delectus quasi voluptatum consectetur
-            nam obcaecati magni reiciendis ex animi, libero, impedit sunt
-            corporis commodi perspiciatis.
-          </p>
+          <p>{user?.bio}</p>
         </ProfileDetails>
         <ProfileFooter></ProfileFooter>
       </ProfileDetailsContent>
