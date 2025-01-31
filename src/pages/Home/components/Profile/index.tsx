@@ -1,3 +1,4 @@
+import { ArrowSquareOut } from "@phosphor-icons/react";
 import { User } from "../../../../models/User";
 import {
   ProfileAvatar,
@@ -28,7 +29,8 @@ export default function Profile({ user }: ProfileProps) {
             href={user?.html_url}
             target="_blank"
           >
-            Github
+            <span>Github</span>
+            <ArrowSquareOut />
           </a>
         </ProfileHeader>
         <ProfileDetails>

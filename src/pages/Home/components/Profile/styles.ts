@@ -40,6 +40,7 @@ export const ProfileHeader = styled.header`
     font-size: 1.125rem;
     text-transform: uppercase;
     display: flex;
+    gap: 0.5rem;
   }
 `;
 
